@@ -5,14 +5,22 @@
     <title>Title</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <p>Welcome to our app</p>
+<body class="chat">
+<div class="chat_sidebar">
+    <h3>People</h3>
+    <div id="users"></div>
+</div>
+<div class="chat_main">
+    <ol id="messages" class="chat_messages"></ol>
 
-    <form id = "message-form">
-        <input type="text" name="message" placeholder="message">
-        <button type="submit" id="submit-btn">Submit</button>
-    </form>
-    <button type="button" id="send-location">Send Location</button>
+    <div class="chat_footer">
+        <form id="message-form">
+            <input name="message" type="text" placeholder="Message" autofocus autocomplete="off">
+            <button id="submit-btn">Send</button>
+        </form>
+        <button id="send-location">Send location</button>
+    </div>
+</div>
 
     <script id="message-template" type="text/template">
     <li class="message">
