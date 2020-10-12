@@ -21,6 +21,8 @@ io.on('connection', (socket) =>{
        if(!isRealString(params.name) || !isRealString(params.room)){
            callback('Name and room are required');
        }
+
+       console.log(socket.id);
        socket.join(params.room);
         socket.emit('newMessage',generateMessage('Admin','Welcome to the chat app!'));
         socket.broadcast.emit('newMessage',generateMessage('Admin','New User joined!'));
